@@ -355,12 +355,12 @@ npm run dev
 $ docker ps
 ```
 
-| Container | Status | Port | Purpose |
-|-----------|--------|------|---------|
-| **duckduckgo-mcp** | Running | 8081 | Web search |
-| **fetch-mcp** | Running | 8082 | URL extraction |
-| **notion-mcp** | Running | 8084 | Documentation |
-| **mcp-gateway** | Running | 9000 | Orchestration |
+| Container | Status | Purpose |
+|-----------|--------|---------|
+| **duckduckgo-mcp** | Running | Web search |
+| **fetch-mcp** | Running | URL extraction |
+| **notion-mcp** | Running | Documentation |
+| **mcp-gateway** | Running | Orchestration |
 
 ### Implementation Details
 
