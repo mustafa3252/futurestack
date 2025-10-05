@@ -1,0 +1,63 @@
+services:
+  # Fetch MCP - URL fetching and content extraction
+  fetch-mcp:
+    image: mcp/fetch:latest
+    container_name: fetch-mcp
+    ports:
+      - "8082:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+  # DuckDuckGo Search MCP - Web search
+  duckduckgo-mcp:
+    image: mcp/duckduckgo:latest
+    container_name: duckduckgo-mcp
+    ports:
+      - "8081:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+  # Notion MCP - Documentation
+  notion-mcp:
+    image: mcp/notion:latest
+    container_name: notion-mcp
+    ports:
+      - "8084:3000"
+    environment:
+      - NODE_ENV=production
+      - NOTION_API_KEY=${NOTION_TOKEN:-}
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+  # Slack MCP - Team communication
+  slack-mcp:
+    image: mcp/slack:latest
+    container_name: slack-mcp
+    ports:
+      - "8083:3000"
+    environment:
+      - NODE_ENV=production
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN:-}
+      - SLACK_TEAM_ID=${SLACK_TEAM_ID:-}
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+networks:
+  mcp-network:
+    driver: bridge
