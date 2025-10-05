@@ -16,8 +16,8 @@ Validate your startup ideas in under 5 minutes with ultra-fast AI agents powered
 - [Quick Start](#quick-start)
 - [Features](#features)
 - [Docker MCP Integration](#docker-mcp-integration)
-- [Performance](#performance)
-- [Demo Guide](#demo-guide)
+- [Project Structure](#project-structure)
+- [Configuration](#configuration)
 
 ---
 
@@ -128,12 +128,6 @@ Next.js 14 + React + TypeScript
 ├── Zustand (state management)
 └── AI SDK (streaming)
 ```
-
-**Design System:**
-- Dark gradient background (slate-900 → slate-800)
-- Glassmorphism effects
-- Blue-purple gradient branding
-- Real-time progress indicators
 
 ### **Docker MCP Integration**
 
@@ -413,124 +407,6 @@ services:
 
 ---
 
-## 📊 Performance
-
-### Speed Metrics
-
-| Metric | Value | Comparison |
-|--------|-------|------------|
-| **Inference Speed** | 2000+ tokens/sec | 20-40x faster than GPT-4 |
-| **Time to First Token** | <50ms | Near-instant |
-| **Context Window** | 1M tokens | 8x larger than GPT-4 |
-| **Validation Time** | <5 minutes | vs 2-4 weeks traditional |
-| **Concurrent Agents** | 6 parallel | vs 1 sequential |
-| **Tool Calls/Minute** | 30+ | High-throughput research |
-
-### Benchmarks
-
-**Traditional Approach:**
-```
-Manual Research: 2-4 weeks
-Cost: $5,000-$20,000 (consultants)
-Data Sources: 5-10 manually reviewed
-```
-
-**StartupScout:**
-```
-AI Research: <5 minutes
-Cost: ~$0.10-$0.50 (API costs)
-Data Sources: 50+ automatically analyzed
-```
-
----
-
-## 🎬 Demo Guide
-
-### For Judges
-
-**1. Show the Tech Stack (30 seconds)**
-
-```bash
-# Show Cerebras configuration
-cat backend/.env | grep MODEL_PROVIDER
-# Output: MODEL_PROVIDER=cerebras
-
-cat backend/.env | grep MODEL=
-# Output: MODEL=llama-4-maverick-17b-128e-instruct
-
-# Show Docker MCP services
-docker ps
-# Shows 4 running MCP containers
-```
-
-**2. Live Validation Demo (2 minutes)**
-
-1. Open http://localhost:3001
-2. Enter idea: *"AI-powered code review tool for GitHub"*
-3. Watch 6 agents work in parallel
-4. Point out real-time streaming
-5. Show comprehensive report (<5 min)
-
-**3. Code Walkthrough (1 minute)**
-
-```bash
-# Cerebras integration
-cat backend/app/engine/llms/cerebras_llm.py
-
-# MCP implementation
-cat backend/app/engine/tools/mcp_server.py
-
-# Agent workflow
-cat backend/app/agents/ideator_inc_workflow.py
-
-# Docker MCP config
-cat docker-compose.yml
-```
-
-### Key Points to Highlight
-
-✅ **Cerebras Track:**
-- Custom LlamaIndex LLM with Cerebras SDK
-- 2000+ tokens/sec streaming inference
-- Llama 4 Maverick with 1M context
-- Performance metrics in logs
-
-✅ **Meta Llama Track:**
-- Llama 4 Maverick (128-expert MoE)
-- Advanced reasoning for market analysis
-- 1M context maintains full research history
-- Multi-step planning capabilities
-
-✅ **Docker MCP Track:**
-- 4 official MCP services deployed
-- Async concurrent execution (6 agents × multiple tools)
-- 5-minute validation via parallel MCP requests
-- Production-ready error handling
-
----
-
-## 🏆 Hackathon Achievements
-
-### Technical Innovation
-- ⚡ **Fastest inference** using Cerebras Cloud
-- 🧠 **Latest AI model** (Llama 4 Maverick)
-- 🐳 **Modern tooling** with Docker MCP
-- 🔄 **Async architecture** for high concurrency
-
-### Practical Impact
-- 💰 **500x cost reduction** vs traditional research
-- ⏱️ **400x faster** validation (5 min vs 2 weeks)
-- 📊 **10x more data** sources analyzed
-- 🎯 **Higher accuracy** through AI consensus
-
-### User Experience
-- 🎨 Modern gradient design with StartupScout branding
-- 📱 Real-time agent dashboard
-- 🔍 Transparent AI decision-making
-- 📄 Comprehensive validation reports
-
----
-
 ## 📁 Project Structure
 
 ```
@@ -595,54 +471,6 @@ GITHUB_TOKEN=your_github_token
 # Documentation
 NOTION_TOKEN=your_notion_token
 ```
-
----
-
-## 🎨 Branding
-
-### StartupScout Design System
-
-**Logo:** 🔍 (Magnifying glass - "scouting" for opportunities)
-
-**Colors:**
-- Primary: Blue → Purple gradient (`#3b82f6` → `#a855f7`)
-- Accent: Cyan (`#22d3ee`)
-- Background: Dark slate gradient
-- Text: White with gradient effects
-
-**Typography:**
-- Headers: Bold with gradient text
-- Subtext: Light cyan for performance metrics
-- Body: Clean, readable white
-
-**UI Elements:**
-- Glassmorphism cards
-- Gradient borders
-- Real-time progress bars
-- Smooth animations (Framer Motion)
-
----
-
-## 📝 License
-
-Built for **FutureStack Hackathon 2025**
-
-**Technologies Used:**
-- Cerebras Cloud
-- Meta Llama 4
-- Docker MCP Toolkit
-- LlamaIndex
-- Next.js
-
----
-
-## 🙏 Acknowledgments
-
-- **Cerebras** - Ultra-fast AI inference platform
-- **Meta** - Llama 4 Maverick model
-- **Docker** - MCP toolkit and gateway
-- **LlamaIndex** - Agent orchestration framework
-- **Vercel** - Next.js framework
 
 ---
 
